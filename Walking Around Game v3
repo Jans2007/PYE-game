@@ -318,4 +318,4 @@ while Lobby == True:
             print("invalid please try again!")
             userinput = int(input("where would you want to go: "))
 
-# Collaboration with Jansen Nunag & Justine Kurt Cubacub 
+# Collaboration with Jansen Nunag & Justine Kurt Cubacub  
