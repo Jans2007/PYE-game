@@ -69,8 +69,8 @@ while Lobby == True:
     Beach = False
     Lobby = True
     Cave = False
-    print("\nPlayer location: Lobby(" + str(player) + ") Beach(🔴)\nCave(🔴)")
-    print("--------Location--------")
+    print("\nPlayer location: Lobby(" + str(player) + ") Beach(🔴) Cave(🔴)")
+    print("--------Destinations--------")
     print("1.Beach")
     print("2.Cave")
     print("--------Settings--------")
@@ -87,7 +87,7 @@ while Lobby == True:
         print("\n---walking to the beach---")
     elif userinput ==3:
         print("\n-----------------------------------------------------------------------------")        
-        print("Tip: While going to Cave or beach, there's a chance of activating\nan event by choosing the choices no.1, try spamming it to see what happens\nNote: onced the event is activated or missed it cannot be activated it again")
+        print("Tip: While going to Cave or Beach, there's a chance of activating\nan event by choosing the choices no.1, try spamming it to see what happens\nNote: onced the event is activated or missed it cannot be activated it again")
         print("-----------------------------------------------------------------------------")        
     elif userinput == 4:
         print("\n---Ending the program---")
@@ -100,7 +100,7 @@ while Lobby == True:
         Beach = True
         Lobby = False
         Cave = False
-        print("\nPlayer location: Lobby(🔴) Beach(" + str(player) + ")\nCave(🔴)")
+        print("\nPlayer location: Lobby(🔴) Beach(" + str(player) + ") Cave(🔴)")
         print("1.stay for a while")
         print("2.Back to the lobby")
         userinput = int(input("where would you want to go: "))
@@ -139,7 +139,7 @@ while Lobby == True:
                     Beach = False
                     Cave = False
                     print("\n---warping to a new world---")
-                    print("\nPlayer location: Lobby(🔴) Beach(🔴) \nCave(🔴) Unknown(" + str(player) + ")")
+                    print("\nPlayer location: Lobby(🔴) Beach(🔴) Cave(🔴) Unknown(" + str(player) + ")")
                     print("1.Explore the new world")
                     print("2.Exit to the portal and leave the event")
                     userinput = int(input("what would you do?: "))
@@ -165,7 +165,7 @@ while Lobby == True:
         Beach = False
         Lobby = False
         Cave = True
-        print("\nPlayer location: Lobby(🔴) Beach(🔴)\nCave(" + str(player) + ")")
+        print("\nPlayer location: Lobby(🔴) Beach(🔴) Cave(" + str(player) + ")")
         print("1.look around")
         print("2.back to the lobby")
         userinput = int(input("where would you want to go: "))
