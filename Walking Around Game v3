@@ -1,0 +1,319 @@
+# Patch v1.3 added hp bar to caveman
+import random
+import time
+
+Beach = False
+Lobby = False
+Cave = False
+actevent = True
+spevent = False
+Go = ""
+notif = False
+name = " " 
+
+# v2 update -- added HP bar
+player = ""
+playerhp = 100
+playeratk = 15
+caveman_f = "🗿" 
+cavemanhp = 100
+cavemanatk = 15
+caveman_alive = True
+#hp bar shi
+hpbar = " "
+hpbar1 = " " 
+inbattle = True
+
+print(" ==Walking Around Game==")
+print("1.Play")
+print("2.Exit")
+choice = int(input("Choose: "))
+
+if choice == 1:
+    Go = True
+    print("\n-Sending you to the character selection-\n")
+elif choice == 2:
+    print("Exiting the game")
+else:
+    print("Invalid input")
+
+if Go == True:
+    print("1.🐸")
+    print("2.🤡")
+    print("3.🐵")
+    character = int(input("choose a character: "))
+
+    if character == 1:
+        name = "Frog" 
+        print("\nyou have selected: 🐸 " +str(name))
+        print("\n---sending you to the lobby---")
+        player = "🐸"
+        Lobby = True
+    elif character == 2:
+        name = "Clown"
+        print("\nyou have selected: 🤡 " +str(name))
+        print("---sending you to the lobby---")
+        player = "🤡"
+        Lobby = True
+    elif character == 3:
+        name = "Nigga"
+        print("\nyou have selected: 🐵 " +str(name))
+        print("---sending you to the lobby---")
+        player = "🐵"
+        Lobby = True
+    else:
+        print("invalid")
+        character = int(input("choose a character: "))
+
+while Lobby == True:
+    Beach = False
+    Lobby = True
+    Cave = False
+    print("\nPlayer location: Lobby(" + str(player) + ") Beach(🔴)\nCave(🔴)")
+    print("1.Beach")
+    print("2.Cave")
+    print("3.Tip")
+    print("4.Exit")
+    userinput = int(input("where would you want to go: "))
+    if userinput == 2:
+        Cave = True
+        Lobby = False
+        print("\n---walking to the cave---")
+    elif userinput == 1:
+        Beach = True
+        Lobby = False
+        print("\n---walking to the beach---")
+    elif userinput ==3:
+        print("\n-----------------------------------------------------------------------------")        
+        print("Tip: While going to Cave or beach, there's a chance of activating\nan event by choosing the choices no.1, try spamming it to see what happens\nNote: onced the event is activated or missed it cannot be activated it again")
+        print("-----------------------------------------------------------------------------")        
+    elif userinput == 4:
+        print("\n---Ending the program---")
+        break
+    else:
+        print("invalid please try again!")
+        userinput = int(input("where would you want to go: "))
+
+    while Beach == True:
+        Beach = True
+        Lobby = False
+        Cave = False
+        print("\nPlayer location: Lobby(🔴) Beach(" + str(player) + ")\nCave(🔴)")
+        print("1.stay for a while")
+        print("2.Back to the lobby")
+        userinput = int(input("where would you want to go: "))
+
+        if userinput == 2:
+            Lobby = True
+            print("\n---Going back to the lobby---")
+            Beach = False
+            spevent = False
+            if notif == True:
+                print("\n---you've missed the event---")
+                notif = False
+
+
+        elif userinput == 1:
+            Beach = True
+            if spevent == False:
+                print("\n---enjoying the cold breeze---")
+                if actevent == True:
+                    event = random.randint(1, 4)
+                    if event == 1:
+                        print("\n ✨✨Special event activated✨✨ ")
+                        notif = True
+                        actevent = False
+                        spevent = True
+                    else:
+                        print("   nothing happen🍃...")
+            else:
+                print("~A random portal just appeared!~")
+                Lobby = False
+                Beach = False
+                Cave = False
+
+                while spevent == True:
+                    Lobby = False
+                    Beach = False
+                    Cave = False
+                    print("\n---warping to a new world---")
+                    print("\nPlayer location: Lobby(🔴) Beach(🔴) \nCave(🔴) Unknown(" + str(player) + ")")
+                    print("1.Explore the new world")
+                    print("2.Exit to the portal and leave the event")
+                    userinput = int(input("what would you do?: "))
+                    spevent = True
+                    actevent = False
+
+                    if userinput == 2:
+                        Beach = True
+                        spevent = False
+                        actevent = False
+                        print("\n---going back to the beach---")
+                        print(" and the portal disappeared!")
+                        notif = True
+
+
+                    elif userinput == 1:
+                        print("going deeper to the unknown")
+        else:
+            print("invalid please try again!")
+            userinput = int(input("where would you want to go: "))
+
+    while Cave == True:
+        Beach = False
+        Lobby = False
+        Cave = True
+        print("\nPlayer location: Lobby(🔴) Beach(🔴)\nCave(" + str(player) + ")")
+        print("1.look around")
+        print("2.back to the lobby")
+        userinput = int(input("where would you want to go: "))
+
+        if userinput == 2:
+            Cave = False
+            print("\n---Going back to the lobby---")
+            Lobby = True
+        elif userinput == 1:
+            if caveman_alive == True: # DITO NAG SISIMULA ANG v1.1 ------------------------------------------------
+                playerhp = 100
+                cavemanhp = 100
+                bosschance = random.randint(1,4)
+                if bosschance == 1:
+                    print("\n⚠WARNING! YOU'VE ENCOUNTER JOEY THE CAVEMAN⚠")
+                    print("🗿") 
+                    print("--Entering Combat--")
+              
+                    while caveman_alive == True:
+                        while playerhp == 100:
+                            hpbar = ("\nHP:🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩")
+                            break
+                        while playerhp <= 99:
+                            hpbar = ("\nHP:🟩🟩🟩🟩🟩🟩🟩🟩🟩⬛")  
+                            break
+                        while playerhp <= 89:
+                            hpbar = ("\nHP:🟩🟩🟩🟩🟩🟩🟩🟩⬛⬛")
+                            break
+                        while playerhp <= 79:
+                            hpbar = ("\nHP:🟩🟩🟩🟩🟩🟩🟩⬛⬛⬛")
+                            break
+                        while playerhp <= 69:
+                            hpbar = ("\nHP:🟩🟩🟩🟩🟩🟩⬛⬛⬛⬛")
+                            break
+                        while playerhp <= 59:
+                            hpbar = ("\nHP:🟨🟨🟨🟨🟨⬛⬛⬛⬛⬛") 
+                            break
+                        while playerhp <= 49:
+                            hpbar = ("\nHP:🟨🟨🟨🟨⬛⬛⬛⬛⬛⬛") 
+                            break
+                        while playerhp <= 39:
+                            hpbar = ("\nHP:🟧🟧🟧⬛⬛⬛⬛⬛⬛⬛")
+                            break
+                        while playerhp <= 29:
+                            hpbar = ("\nHP🟧🟧⬛⬛⬛⬛⬛⬛⬛⬛")
+                            break
+                        while playerhp <= 19:
+                            hpbar = ("\nHP:🟥⬛⬛⬛⬛⬛⬛⬛⬛⬛")
+                            break
+                        while playerhp <= 10:
+                            hpbar = ("\nHP:🟥⬛⬛⬛⬛⬛⬛⬛⬛⬛")
+                            break    
+                        while playerhp == 0:
+                            hpbar = ("\nHP:⬛⬛⬛⬛⬛⬛⬛⬛⬛")
+                            break
+                            
+                        while cavemanhp == 100:
+                            hpbar1 = ("HP:🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩")
+                            break
+                        while cavemanhp <= 99:
+                            hpbar1 = ("HP:🟩🟩🟩🟩🟩🟩🟩🟩🟩⬛")  
+                            break
+                        while cavemanhp <= 89:
+                            hpbar1 = ("HP:🟩🟩🟩🟩🟩🟩🟩🟩⬛⬛")
+                            break
+                        while cavemanhp <= 79:
+                            hpbar1 = ("HP:🟩🟩🟩🟩🟩🟩🟩⬛⬛⬛")
+                            break
+                        while cavemanhp <= 69:
+                            hpbar1 = ("HP:🟩🟩🟩🟩🟩🟩⬛⬛⬛⬛")
+                            break
+                        while cavemanhp <= 59:
+                            hpbar1 = ("HP:🟨🟨🟨🟨🟨⬛⬛⬛⬛⬛") 
+                            break
+                        while cavemanhp <= 49:
+                            hpbar1 = ("HP:🟨🟨🟨🟨⬛⬛⬛⬛⬛⬛") 
+                            break
+                        while cavemanhp <= 39:
+                            hpbar1 = ("HP:🟧🟧🟧⬛⬛⬛⬛⬛⬛⬛")
+                            break
+                        while cavemanhp <= 29:
+                            hpbar1 = ("HP🟧🟧⬛⬛⬛⬛⬛⬛⬛⬛")
+                            break
+                        while cavemanhp <= 19:
+                            hpbar1 = ("HP:🟥⬛⬛⬛⬛⬛⬛⬛⬛⬛")
+                            break
+                        while cavemanhp <= 10:
+                            hpbar1 = ("HP:🟥⬛⬛⬛⬛⬛⬛⬛⬛⬛")
+                            break    
+                        while cavemanhp == 0:
+                            hpbar1 = ("HP:⬛⬛⬛⬛⬛⬛⬛⬛⬛")
+                            break
+                        print("-----------------------------------------------")        
+                        print(str(hpbar) + str(playerhp)+"/100   "+ str(hpbar1) +str(cavemanhp)+"/100")    
+                        print(str(name) +":" +str(player)+ "                Caveman: "+str(caveman_f))
+                        print("1. ⚔️ Attack the Caveman")
+                        print("2. 🩹 Heal")
+                        print("3. 🏃 Run")
+                        userdecision = int(input("Your Choice: "))
+                        print("-----------------------------------------------")     
+                        
+                        if userdecision == 1:
+                            playerattack = random.randint(1, playeratk)
+                            cavemanhp -= playerattack
+                            print("\nYou've Dealth " + str(playerattack) + " To the Caveman😂")
+                            if cavemanhp > 0:
+                                cavemanattack = random.randint(1, cavemanatk)
+                                playerhp -= cavemanattack
+                                print("\nYou've Lose " + str(cavemanattack) + " Health😭" )
+                        if userdecision == 2:
+                            if playerhp < 100:
+                                Healing = random.randint(1, 50)
+                                playerhp += Healing
+                                cavemanattack = random.randint(1, cavemanatk)
+                                playerhp -= cavemanattack
+                                print(f"\nYou've Healed {Healing} 🩹  while losing {cavemanattack} HP🩸\nto the caveman😫 ")
+                            if playerhp >= 100:
+                                playerhp = 100
+                                cavemanattack = random.randint(1, cavemanatk)
+                                playerhp -= cavemanattack
+                                print("\nYou've reached your max HP of 100 you can't Heal more than that🙄")
+                                print("You Lose " +str(cavemanattack) +"HP "+ " while trying to heal😫\n")
+                        if userdecision == 3:
+                            runchance = random.randint(1,2)
+                            if runchance == 1:
+                                print("\n---😍You've Successfully Ran😍---")
+                                print("🚧GOING OUT OF COMBAT🚧")
+                                inbattle = False
+                                break
+                            else:
+                                cavemanattack = random.randint(1, cavemanatk)
+                                playerhp -= cavemanattack
+                                print("\nYou can't run right now😭 you lose " + str(cavemanattack)+"hp " + "in the process")
+                        if playerhp <= 0:
+                            print("\n---😭You Lose😭---")
+                            print("🚧GOING OUT OF COMBAT🚧")
+                            inbattle = False
+                            break
+                        if cavemanhp <= 0:
+                            print("\n🏆You Win! 🏆 Caveman will no longer bother you anymore🏆")
+                            caveman_alive = False
+                            inbattle = False
+                            print("🚧GOING OUT OF COMBAT🚧")
+                            break
+            print("\n---Looking around the Cave---")
+            if caveman_alive == False:
+                print("There's nothing to find here...\n Your already defeated the enemy")
+                # HANGANG DITO v1.1 ------------------------------------------------
+        else:
+            print("invalid please try again!")
+            userinput = int(input("where would you want to go: "))
+
+# Collaboration with Jansen Nunag & Justine Kurt Cubacub 
