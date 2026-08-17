@@ -38,9 +38,9 @@ else:
     print("Invalid input")
 
 if Go == True:
-    print("1.🐸")
-    print("2.🤡")
-    print("3.🐵")
+    print("------------Character Selection------------\n")
+    print("     1.🐸        2.🤡         3.🐵")
+    print("     Frog        Clown        Nigga\n")
     character = int(input("choose a character: "))
 
     if character == 1:
@@ -69,13 +69,10 @@ while Lobby == True:
     Beach = False
     Lobby = True
     Cave = False
-    print("\nPlayer location: Lobby(" + str(player) + ") Beach(🔴) Cave(🔴)")
-    print("--------Destinations--------")
-    print("1.Beach")
-    print("2.Cave")
-    print("--------Settings--------")
-    print("3.Tip")
-    print("4.Exit")
+    print("\nPlayer location: Lobby(" + str(player) + ")     Beach(🔴)     Cave(🔴)")
+    print("--------Destinations--------        --------Settings--------")
+    print("1.Beach                             3.Tips")
+    print("2.Cave                              4.Exit")
     userinput = int(input("where would you want to go: "))
     if userinput == 2:
         Cave = True
@@ -100,7 +97,7 @@ while Lobby == True:
         Beach = True
         Lobby = False
         Cave = False
-        print("\nPlayer location: Lobby(🔴) Beach(" + str(player) + ") Cave(🔴)")
+        print("\nPlayer location: Lobby(🔴)     Beach(" + str(player) + ")     Cave(🔴)")
         print("1.stay for a while")
         print("2.Back to the lobby")
         userinput = int(input("where would you want to go: "))
@@ -139,7 +136,7 @@ while Lobby == True:
                     Beach = False
                     Cave = False
                     print("\n---warping to a new world---")
-                    print("\nPlayer location: Lobby(🔴) Beach(🔴) Cave(🔴) Unknown(" + str(player) + ")")
+                    print("\nPlayer location: Lobby(🔴)     Beach(🔴)     Cave(🔴)     Unknown(" + str(player) + ")")
                     print("1.Explore the new world")
                     print("2.Exit to the portal and leave the event")
                     userinput = int(input("what would you do?: "))
@@ -165,7 +162,7 @@ while Lobby == True:
         Beach = False
         Lobby = False
         Cave = True
-        print("\nPlayer location: Lobby(🔴) Beach(🔴) Cave(" + str(player) + ")")
+        print("\nPlayer location: Lobby(🔴)     Beach(🔴)     Cave(" + str(player) + ")")
         print("1.look around")
         print("2.back to the lobby")
         userinput = int(input("where would you want to go: "))
@@ -274,14 +271,14 @@ while Lobby == True:
                             if cavemanhp > 0:
                                 cavemanattack = random.randint(1, cavemanatk)
                                 playerhp -= cavemanattack
-                                print("\nYou've Lose " + str(cavemanattack) + " Health😭" )
+                                print("You've Lose " + str(cavemanattack) + " Health😭\n" )
                         if userdecision == 2:
                             if playerhp < 100:
                                 Healing = random.randint(1, 50)
                                 playerhp += Healing
                                 cavemanattack = random.randint(1, cavemanatk)
                                 playerhp -= cavemanattack
-                                print(f"\nYou've Healed {Healing} 🩹  while losing {cavemanattack} HP🩸\nto the caveman😫 ")
+                                print(f"\nYou've Healed {Healing} 🩹  while losing {cavemanattack} HP🩸\nto the caveman😫\n ")
                             if playerhp >= 100:
                                 playerhp = 100
                                 cavemanattack = random.randint(1, cavemanatk)
@@ -298,7 +295,7 @@ while Lobby == True:
                             else:
                                 cavemanattack = random.randint(1, cavemanatk)
                                 playerhp -= cavemanattack
-                                print("\nYou can't run right now😭 you lose " + str(cavemanattack)+"hp " + "in the process\n")
+                                print("\nYou can't run right now😭 you lose " + str(cavemanattack)+" hp " + "in the process\n")
                         if playerhp <= 0:
                             print("\n---😭You Lose😭---")
                             print("🚧GOING OUT OF COMBAT🚧")
@@ -318,4 +315,4 @@ while Lobby == True:
             print("invalid please try again!")
             userinput = int(input("where would you want to go: "))
 
-# Collaboration with Jansen Nunag & Justine Kurt Cubacub  
+# Collaboration with Jansen Nunag & Justine Kurt Cubacub 
