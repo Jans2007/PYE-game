@@ -8,7 +8,7 @@ Cave = False
 actevent = True
 spevent = False
 Go = ""
-notif = True
+notif = False
 hpbar = " " 
 
 # v2 update -- added HP bar
@@ -112,6 +112,7 @@ while Lobby == True:
                     event = random.randint(1, 4)
                     if event == 1:
                         print("\n ✨✨Special event activated✨✨ ")
+                        notif = True
                         actevent = False
                         spevent = True
                     else:
@@ -224,7 +225,7 @@ while Lobby == True:
                             if cavemanhp > 0:
                                 cavemanattack = random.randint(1, cavemanatk)
                                 playerhp -= cavemanattack
-                                print("\nYou've Lose " + str(cavemanattack) + "Health😭" )
+                                print("\nYou've Lose " + str(cavemanattack) + " Health😭" )
                         if userdecision == 2:
                             if playerhp < 100:
                                 Healing = random.randint(1, 50)
