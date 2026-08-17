@@ -251,18 +251,19 @@ while Lobby == True:
                         while cavemanhp == 0:
                             hpbar1 = ("HP:⬛⬛⬛⬛⬛⬛⬛⬛⬛")
                             break
-                                
+                        print("-----------------------------------------------")        
                         print(str(hpbar) + str(playerhp)+"/100   "+ str(hpbar1) +str(cavemanhp)+"/100")    
                         print(str(name) +":" +str(player)+ "                Caveman: "+str(caveman_f))
                         print("1. ⚔️ Attack the Caveman")
                         print("2. 🩹 Heal")
                         print("3. 🏃 Run")
                         userdecision = int(input("Your Choice: "))
+                        print("-----------------------------------------------")     
                         
                         if userdecision == 1:
                             playerattack = random.randint(1, playeratk)
                             cavemanhp -= playerattack
-                            print("You've Dealth " + str(playerattack) + " To the Caveman😂")
+                            print("\nYou've Dealth " + str(playerattack) + " To the Caveman😂")
                             if cavemanhp > 0:
                                 cavemanattack = random.randint(1, cavemanatk)
                                 playerhp -= cavemanattack
@@ -273,13 +274,13 @@ while Lobby == True:
                                 playerhp += Healing
                                 cavemanattack = random.randint(1, cavemanatk)
                                 playerhp -= cavemanattack
-                                print(f"\nYou've Healed {Healing} 🩹  while losing {cavemanattack} HP🩸 to the caveman😫 ")
+                                print(f"\nYou've Healed {Healing} 🩹  while losing {cavemanattack} HP🩸\nto the caveman😫 ")
                             if playerhp >= 100:
                                 playerhp = 100
                                 cavemanattack = random.randint(1, cavemanatk)
                                 playerhp -= cavemanattack
                                 print("\nYou've reached your max HP of 100 you can't Heal more than that🙄")
-                                print("You Lose " +str(cavemanattack) +"HP "+ " while trying to heal😫")
+                                print("You Lose " +str(cavemanattack) +"HP "+ " while trying to heal😫\n")
                         if userdecision == 3:
                             runchance = random.randint(1,2)
                             if runchance == 1:
@@ -290,7 +291,7 @@ while Lobby == True:
                             else:
                                 cavemanattack = random.randint(1, cavemanatk)
                                 playerhp -= cavemanattack
-                                print("You can't run right now😭 you lose " + str(cavemanattack)+"hp " + "in the process")
+                                print("\nYou can't run right now😭 you lose " + str(cavemanattack)+"hp " + "in the process")
                         if playerhp <= 0:
                             print("\n---😭You Lose😭---")
                             print("🚧GOING OUT OF COMBAT🚧")
@@ -303,6 +304,8 @@ while Lobby == True:
                             print("🚧GOING OUT OF COMBAT🚧")
                             break
             print("\n---Looking around the Cave---")
+            if caveman_alive == False:
+                print("There's nothing to find here...\n Your already defeated the enemy")
                 # HANGANG DITO v1.1 ------------------------------------------------
         else:
             print("invalid please try again!")
