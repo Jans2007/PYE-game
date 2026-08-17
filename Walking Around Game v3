@@ -126,7 +126,7 @@ while Lobby == True:
                     else:
                         print("   nothing happen🍃...")
             else:
-                print("~A random portal just appeared!~")
+                print("\n~A random portal just appeared!~")
                 Lobby = False
                 Beach = False
                 Cave = False
@@ -135,7 +135,7 @@ while Lobby == True:
                     Lobby = False
                     Beach = False
                     Cave = False
-                    print("\n---warping to a new world---")
+                    print("---warping to a new world---")
                     print("\nPlayer location: Lobby(🔴)     Beach(🔴)     Cave(🔴)     Unknown(" + str(player) + ")")
                     print("1.Explore the new world")
                     print("2.Exit to the portal and leave the event")
