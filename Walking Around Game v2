@@ -1,4 +1,4 @@
-# Patch v1.2
+# Patch v1.3 added hp bar to caveman
 import random
 import time
 
@@ -9,7 +9,7 @@ actevent = True
 spevent = False
 Go = ""
 notif = False
-hpbar = " " 
+name = " " 
 
 # v2 update -- added HP bar
 player = ""
@@ -21,6 +21,7 @@ cavemanatk = 15
 caveman_alive = True
 #hp bar shi
 hpbar = " "
+hpbar1 = " " 
 inbattle = True
 
 print(" ==Walking Around Game==")
@@ -43,17 +44,20 @@ if Go == True:
     character = int(input("choose a character: "))
 
     if character == 1:
-        print("\nyou have selected: 🐸 frog")
+        name = "Frog" 
+        print("\nyou have selected: 🐸 " +str(name))
         print("\n---sending you to the lobby---")
         player = "🐸"
         Lobby = True
     elif character == 2:
-        print("\nyou have selected: 🤡 clown")
+        name = "Clown"
+        print("\nyou have selected: 🤡 " +str(name))
         print("---sending you to the lobby---")
         player = "🤡"
         Lobby = True
     elif character == 3:
-        print("\nyou have selected: 🐵 nigga")
+        name = "Nigga"
+        print("\nyou have selected: 🐵 " +str(name))
         print("---sending you to the lobby---")
         player = "🐵"
         Lobby = True
@@ -211,8 +215,45 @@ while Lobby == True:
                             hpbar = ("\nHP:⬛⬛⬛⬛⬛⬛⬛⬛⬛")
                             break
                             
-                        print(str(hpbar) +" "+ str(playerhp)+ "/100\nplayer: "+str(player))
-                        print("Caveman: "+str(caveman_f)+" Caveman's HP is " + str(cavemanhp))
+                        while cavemanhp == 100:
+                            hpbar1 = ("HP:🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩")
+                            break
+                        while cavemanhp <= 99:
+                            hpbar1 = ("HP:🟩🟩🟩🟩🟩🟩🟩🟩🟩⬛")  
+                            break
+                        while cavemanhp <= 89:
+                            hpbar1 = ("HP:🟩🟩🟩🟩🟩🟩🟩🟩⬛⬛")
+                            break
+                        while cavemanhp <= 79:
+                            hpbar1 = ("HP:🟩🟩🟩🟩🟩🟩🟩⬛⬛⬛")
+                            break
+                        while cavemanhp <= 69:
+                            hpbar1 = ("HP:🟩🟩🟩🟩🟩🟩⬛⬛⬛⬛")
+                            break
+                        while cavemanhp <= 59:
+                            hpbar1 = ("HP:🟨🟨🟨🟨🟨⬛⬛⬛⬛⬛") 
+                            break
+                        while cavemanhp <= 49:
+                            hpbar1 = ("HP:🟨🟨🟨🟨⬛⬛⬛⬛⬛⬛") 
+                            break
+                        while cavemanhp <= 39:
+                            hpbar1 = ("HP:🟧🟧🟧⬛⬛⬛⬛⬛⬛⬛")
+                            break
+                        while cavemanhp <= 29:
+                            hpbar1 = ("HP🟧🟧⬛⬛⬛⬛⬛⬛⬛⬛")
+                            break
+                        while cavemanhp <= 19:
+                            hpbar1 = ("HP:🟥⬛⬛⬛⬛⬛⬛⬛⬛⬛")
+                            break
+                        while cavemanhp <= 10:
+                            hpbar1 = ("HP:🟥⬛⬛⬛⬛⬛⬛⬛⬛⬛")
+                            break    
+                        while cavemanhp == 0:
+                            hpbar1 = ("HP:⬛⬛⬛⬛⬛⬛⬛⬛⬛")
+                            break
+                                
+                        print(str(hpbar) + str(playerhp)+"/100   "+ str(hpbar1) +str(cavemanhp)+"/100")    
+                        print(str(name) +":" +str(player)+ "                Caveman: "+str(caveman_f))
                         print("1. ⚔️ Attack the Caveman")
                         print("2. 🩹 Heal")
                         print("3. 🏃 Run")
