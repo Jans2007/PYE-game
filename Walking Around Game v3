@@ -1,4 +1,4 @@
-# Patch v5 added tip for on how to activate the events!.
+# Patch v1.3 added hp bar to caveman
 import random
 import time
 
@@ -70,8 +70,10 @@ while Lobby == True:
     Lobby = True
     Cave = False
     print("\nPlayer location: Lobby(" + str(player) + ") Beach(🔴)\nCave(🔴)")
+    print("--------Location--------")
     print("1.Beach")
     print("2.Cave")
+    print("--------Settings--------")
     print("3.Tip")
     print("4.Exit")
     userinput = int(input("where would you want to go: "))
@@ -179,8 +181,8 @@ while Lobby == True:
                 bosschance = random.randint(1,4)
                 if bosschance == 1:
                     print("\n⚠WARNING! YOU'VE ENCOUNTER JOEY THE CAVEMAN⚠")
-                    print("🗿") 
-                    print("--Entering Combat--")
+                    print("                    🗿") 
+                    print("            --Entering Combat--")
               
                     while caveman_alive == True:
                         while playerhp == 100:
@@ -296,7 +298,7 @@ while Lobby == True:
                             else:
                                 cavemanattack = random.randint(1, cavemanatk)
                                 playerhp -= cavemanattack
-                                print("\nYou can't run right now😭 you lose " + str(cavemanattack)+"hp " + "in the process")
+                                print("\nYou can't run right now😭 you lose " + str(cavemanattack)+"hp " + "in the process\n")
                         if playerhp <= 0:
                             print("\n---😭You Lose😭---")
                             print("🚧GOING OUT OF COMBAT🚧")
