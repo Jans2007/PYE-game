@@ -1,4 +1,4 @@
-# Patch v1.3 added hp bar to caveman
+# Patch v1.4 cleaned the text while battling caveman
 import random
 import time
 
